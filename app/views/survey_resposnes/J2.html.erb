@@ -1,0 +1,147 @@
+<% if @survey_resposne.J2a == "error" %>
+<div class="alert alert-dismissable alert-danger">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  Please answer the question
+</div>
+<% end %>
+<h3>Considering your use of the drug which caused the biggest problems (if any), in the past 12 months:
+</h3>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/K1a" method="get">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+      <h4>During the times when you used the drug, did you end up using more than you planned when you started? </h4>
+      <!-- Label and input for J2 -->
+      <div class="radio">
+        <label><input type="radio" id="J2a" name="J2a" value = "no">No</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" id="J2a" name="J2a" value = "yes" >Yes</label>
+      </div>
+      <h4>Did you repeatedly want to reduce or control your drug use? Or did you try to cut down or control your use, but failed? </h4>
+      <div class="radio">
+        <label><input type="radio" id="J2b" name="J2b" value = "no">No</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" id="J2b" name="J2b" value = "yes" >Yes</label>
+      </div>
+      <h4>On the days that you used more, did you spend substantial time obtaining the drug, using it, or recovering from its effects?  </h4>
+      <div class="radio">
+        <label><input type="radio" id="J2c" name="J2c" value = "no">No</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" id="J2c" name="J2c" value = "yes" >Yes</label>
+      </div>
+      <h4>Did you crave or have a strong desire or urge to use it? </h4>
+      <div class="radio">
+        <label><input type="radio" id="J2d" name="J2d" value = "no">No</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" id="J2d" name="J2d" value = "yes" >Yes</label>
+      </div>
+      <h4>Did you spend less time meeting your responsibilities at work, at school, or at home, because of your repeated use? </h4>
+      <div class="radio">
+        <label><input type="radio" id="J2e" name="J2e" value = "no">No</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" id="J2e" name="J2e" value = "yes" >Yes</label>
+      </div>
+      <h4> If your use caused problems with your family or other people, did you still keep on using it? </h4>
+      <div class="radio">
+        <label><input type="radio" id="J2f" name="J2f" value = "no">No</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" id="J2f" name="J2f" value = "yes" >Yes</label>
+      </div>
+      <h4>Did you use the drug more than once in any situation where you or others were physically at risk, for example, driving a car, riding a motorbike, using machinery, boating, etc.? </h4>
+      <div class="radio">
+        <label><input type="radio" id="J2g" name="J2g" value = "no">No</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" id="J2g" name="J2g" value = "yes" >Yes</label>
+      </div>
+      <h4>Did you continue to use the drug, even though it was clear that it caused or worsened psychological or physical problems?  </h4>
+      <div class="radio">
+        <label><input type="radio" id="J2h" name="J2h" value = "no">No</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" id="J2h" name="J2h" value = "yes" >Yes</label>
+      </div>
+      <h4>Did you reduce or give up important work, social or recreational activities because of your use? </h4>
+      <div class="radio">
+        <label><input type="radio" id="J2i" name="J2i" value = "no">No</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" id="J2i" name="J2i" value = "yes" >Yes</label>
+      </div>
+      <h4>Did you need to use a lot more in order to get the same effect that you got when you first started using it or did you get much less effect with continued use of the same amount? </h4>
+      <div class="radio">
+        <label><input type="radio" id="J2j" name="J2j" value = "no">No</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" id="J2j" name="J2j" value = "yes" >Yes</label>
+      </div>
+      <h4>When you cut down on heavy or prolonged use of the drug did you have 2 or more of the following withdrawal symptoms (please see appropriate category):</h4>
+      <h5>
+      Cannabis (e.g., marijuana, pot, weed)
+      <li>irritability, anger or aggression</li>
+      <li>nervousness or anxiety</li>
+      <li>trouble sleeping</li>
+      <li>appetite or weight loss</li>
+      <li>restlessness</li>
+      <li>feeling depressed</li>
+      <li>significant discomfort from one of the following: stomach pain, tremors or “shakes”, sweating, hot flashes, chills headaches</li>
+      <br></br>
+      Stimulants (e.g., speed, crystal meth, Ritalin, diet pills, amphetamines)
+      <li>fatigue</li>
+      <li>vivid or unpleasant dreams</li>
+      <li>difficulty sleeping or sleeping too much</li>
+      <li>increased appetite</li>
+      <li>feeling or looking physically or mentally slowed down</li>
+      <li>feeling depressed</li>
+      <br></br>
+      Opiates (e.g., heroin, morphine, methadone, codeine, Vicodin, OxyContin)
+      <li>feeling depressed</li>
+      <li>nausea or vomiting</li>
+      <li>muscle aches</li>
+      <li>runny nose or teary eyes</li>
+      <li>dilated pupils, goose bumps or hair standing on end or sweating</li>
+      <li>diarrhea</li>
+      <li>yawning</li>
+      <li>hot flashes</li>
+      <li>trouble sleeping</li>
+      <br></br>
+      Sedative, Hypnotic or Anxiolytic (e.g., Ativan, Valium, Xanax, Roofies, barbiturates)
+      <li>increased sweating or increased heart rate</li>
+      <li>hand tremor or “the shakes”</li>
+      <li>trouble sleeping</li>
+      <li>nausea or vomiting</li>
+      <li>hearing or seeing things other people could not see or hear or having sensations in your skin for no apparent reason</li>
+      <li>agitation</li>
+      <li>anxiety</li>
+      <li>seizures</li>
+      </h5>
+      <div class="radio">
+        <label><input type="radio" id="J2k1" name="J2k1" value = "no">No</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" id="J2k1" name="J2k1" value = "yes" >Yes</label>
+      </div>
+      <h4>Did you use the drug to reduce or avoid withdrawal symptoms? </h4>
+      <div class="radio">
+        <label><input type="radio" id="J2k2" name="J2k2" value = "no">No</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" id="J2k2" name="J2k2" value = "yes" >Yes</label>
+      </div>
+
+      <input type="hidden" name="survey_id" value="<%=@survey_resposne.id %>">
+
+      <button class="btn btn-success">
+        Next Question
+      </button>
+    </form>
+  </div>
+</div>

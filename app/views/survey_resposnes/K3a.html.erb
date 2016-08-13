@@ -1,0 +1,34 @@
+<% if @survey_resposne.K3a == "error" %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      Please answer the question
+    </div>
+<% end %>
+
+<div class="page-header">
+  <h4>Have you ever believed that someone or some force outside of yourself put thoughts in your mind that were not your own, or made you act in a way that was not your usual self? Or have you ever felt that you were possessed? </h4>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/K4a" method="get">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for K3a -->
+          <div class="radio">
+            <label><input type="radio" id="K3a" name="K3a" value = "no">No</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" id="K3a" name="K3a" value = "yes" >Yes</label>
+          </div>
+
+
+      <input type="hidden" name="survey_id" value="<%=@survey_resposne.id %>">
+
+      <button class="btn btn-success">
+        Next Question
+      </button>
+    </form>
+  </div>
+</div>

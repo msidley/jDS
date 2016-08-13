@@ -387,6 +387,183 @@ class SurveyResposnesController < ApplicationController
       render('ineligible.html.erb')
     end
   end
+  def J2
+    @survey_resposne = SurveyResposne.find(params[:survey_id])
+    @survey_resposne.J1aLtext = params[:J1aLtext]
+    @survey_resposne.save
+    if @survey_resposne.J1aLtext == nil or @survey_resposne.J1aLtext == "error"
+      @survey_resposne.J1aLtext = "error"
+      @survey_resposne.save
+      render('J1.html.erb')
+    end
+    if @survey_resposne.J1aLtext == "no"
+      render('K1a.html.erb')
+    end
+  end
+def K1a
+  @survey_resposne = SurveyResposne.find(params[:survey_id])
+  @survey_resposne.J2a = params[:J2a]
+  @survey_resposne.J2b = params[:J2b]
+  @survey_resposne.J2c = params[:J2c]
+  @survey_resposne.J2d = params[:J2d]
+  @survey_resposne.J2e = params[:J2e]
+  @survey_resposne.J2f = params[:J2f]
+  @survey_resposne.J2g = params[:J2g]
+  @survey_resposne.J2h = params[:J2h]
+  @survey_resposne.J2i = params[:J2i]
+  @survey_resposne.J2j = params[:J2j]
+  @survey_resposne.J2k1 = params[:J2k1]
+  @survey_resposne.J2k2 = params[:J2k2]
+  @survey_resposne.save
+  if @survey_resposne.J2a == nil or @survey_resposne.J2a == "error" || @survey_resposne.J2b == nil or @survey_resposne.J2b == "error" || @survey_resposne.J2c == nil or @survey_resposne.J2c == "error" || @survey_resposne.J2d == nil or @survey_resposne.J2d == "error" || @survey_resposne.J2e == nil or @survey_resposne.J2e == "error" || @survey_resposne.J2f == nil or @survey_resposne.J2f == "error" || @survey_resposne.J2g == nil or @survey_resposne.J2g == "error" || @survey_resposne.J2h == nil or @survey_resposne.J2h == "error" || @survey_resposne.J2i == nil or @survey_resposne.J2i == "error" || @survey_resposne.J2j == nil or @survey_resposne.J2j == "error" || @survey_resposne.J2k1 == nil or @survey_resposne.J2k1 == "error"  || @survey_resposne.J2k2 == nil or @survey_resposne.J2k2 == "error"
+    @survey_resposne.J2a = "error"
+    @survey_resposne.J2b = "error"
+    @survey_resposne.J2c = "error"
+    @survey_resposne.J2d = "error"
+    @survey_resposne.J2e = "error"
+    @survey_resposne.J2f = "error"
+    @survey_resposne.J2g = "error"
+    @survey_resposne.J2h ="error"
+    @survey_resposne.J2i ="error"
+    @survey_resposne.J2j ="error"
+    @survey_resposne.J2k1 = "error"
+    @survey_resposne.J2k2 = "error"
+    @survey_resposne.save
+    render('J2.html.erb')
+  end
+  if @survey_resposne.J2k1 == "yes" ||  @survey_resposne.J2k2 == "yes"
+    @survey_resposne.qe3 = "yes"
+    @survey_resposne.save
+  end
+  sum = 0
+  if @survey_resposne.J2a == "yes"
+    sum = sum + 1
+  end
+  if @survey_resposne.J2b == "yes"
+    sum = sum + 1
+  end
+  if @survey_resposne.J2c == "yes"
+    sum = sum + 1
+  end
+  if @survey_resposne.J2d == "yes"
+    sum = sum + 1
+  end
+  if @survey_resposne.J2e == "yes"
+    sum = sum + 1
+  end
+  if @survey_resposne.J2f == "yes"
+    sum = sum + 1
+  end
+  if @survey_resposne.J2g == "yes"
+    sum = sum + 1
+  end
+  if @survey_resposne.J2h == "yes"
+    sum = sum + 1
+  end
+  if @survey_resposne.J2j == "yes"
+    sum = sum + 1
+  end
+  if sum >= 2 && @survey_resposne.qe3 = "yes"
+    render('ineligible.html.erb')
+  end
+end
+  def K2a
+    @survey_resposne = SurveyResposne.find(params[:survey_id])
+    @survey_resposne.K1a = params[:K1a]
+    @survey_resposne.save
+    if @survey_resposne.K1a == nil or @survey_resposne.K1a == "error"
+      @survey_resposne.K1a = "error"
+      @survey_resposne.save
+      render('K1a.html.erb')
+    end
+  end
+  def K3a
+    @survey_resposne = SurveyResposne.find(params[:survey_id])
+    @survey_resposne.K2a = params[:K2a]
+    @survey_resposne.save
+    if @survey_resposne.K2a == nil or @survey_resposne.K2a == "error"
+      @survey_resposne.K2a = "error"
+      @survey_resposne.save
+      render('K2a.html.erb')
+    end
+  end
+  def K4a
+    @survey_resposne = SurveyResposne.find(params[:survey_id])
+    @survey_resposne.K3a = params[:K3a]
+    @survey_resposne.save
+    if @survey_resposne.K3a == nil or @survey_resposne.K3a == "error"
+      @survey_resposne.K3a = "error"
+      @survey_resposne.save
+      render('K3a.html.erb')
+    end
+  end
+  def K5a
+    @survey_resposne = SurveyResposne.find(params[:survey_id])
+    @survey_resposne.K4a = params[:K4a]
+    @survey_resposne.save
+    if @survey_resposne.K4a == nil or @survey_resposne.K4a == "error"
+      @survey_resposne.K4a = "error"
+      @survey_resposne.save
+      render('K4a.html.erb')
+    end
+  end
+  def K6a
+    @survey_resposne = SurveyResposne.find(params[:survey_id])
+    @survey_resposne.K5a = params[:K5a]
+    @survey_resposne.save
+    if @survey_resposne.K5a == nil or @survey_resposne.K5a == "error"
+      @survey_resposne.K5a = "error"
+      @survey_resposne.save
+      render('K5a.html.erb')
+    end
+  end
+  def K7a
+    @survey_resposne = SurveyResposne.find(params[:survey_id])
+    @survey_resposne.K6a = params[:K6a]
+    @survey_resposne.save
+    if @survey_resposne.K6a == nil or @survey_resposne.K6a == "error"
+      @survey_resposne.K6a = "error"
+      @survey_resposne.save
+      render('K6a.html.erb')
+    end
+  end
+  def L1a
+    @survey_resposne = SurveyResposne.find(params[:survey_id])
+    @survey_resposne.K7a = params[:K7a]
+    @survey_resposne.save
+    if @survey_resposne.K7a == nil or @survey_resposne.K7a == "error"
+      @survey_resposne.K7a = "error"
+      @survey_resposne.save
+      render('K7a.html.erb')
+    end
+    sum = 0
+    if @survey_resposne.K1a == "yes"
+      sum = sum + 1
+    end
+    if @survey_resposne.K2a == "yes"
+      sum = sum + 1
+    end
+    if @survey_resposne.K3a == "yes"
+      sum = sum + 1
+    end
+    if @survey_resposne.K4a == "yes"
+      sum = sum + 1
+    end
+    if @survey_resposne.K5a == "yes"
+      sum = sum + 1
+    end
+    if @survey_resposne.K6a == "yes"
+      sum = sum + 1
+    end
+    if @survey_resposne.K7a == "yes"
+      sum = sum + 1
+    end
+    if sum >= 2
+    render('ineligible.html.erb')
+    end
+  end
+
+
 
 
   def ineligible
@@ -419,7 +596,7 @@ class SurveyResposnesController < ApplicationController
     @survey_resposne.C3f = params[:C3f]
     @survey_resposne.C3g = params[:C3g]
     @survey_resposne.C4 = params[:C4]
-    @survey_resposne.C5 = params[:C5]
+    @survey_resposne.K1a = params[:C5]
     @survey_resposne.C6 = params[:C6]
     @survey_resposne.C7 = params[:C7]
     @survey_resposne.I1 = params[:I1]

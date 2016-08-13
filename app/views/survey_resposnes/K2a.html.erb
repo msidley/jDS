@@ -1,0 +1,34 @@
+<% if @survey_resposne.K2a == "error" %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      Please answer the question
+    </div>
+<% end %>
+
+<div class="page-header">
+  <h4>Have you ever believed that someone was reading your mind or could hear your thoughts, or that you could actually read someone’s mind or hear what another person was thinking? </h4>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/K3a" method="get">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for K2a -->
+          <div class="radio">
+            <label><input type="radio" id="K2a" name="K2a" value = "no">No</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" id="K2a" name="K2a" value = "yes" >Yes</label>
+          </div>
+
+
+      <input type="hidden" name="survey_id" value="<%=@survey_resposne.id %>">
+
+      <button class="btn btn-success">
+        Next Question
+      </button>
+    </form>
+  </div>
+</div>

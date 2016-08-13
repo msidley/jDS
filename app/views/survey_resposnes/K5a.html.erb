@@ -1,0 +1,34 @@
+<% if @survey_resposne.K5a == "error" %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      Please answer the question
+    </div>
+<% end %>
+
+<div class="page-header">
+  <h4>Have your relatives or friends ever considered any of your beliefs odd or unusual?</h4>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/K6a" method="get">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for K5a -->
+          <div class="radio">
+            <label><input type="radio" id="K5a" name="K5a" value = "no">No</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" id="K5a" name="K5a" value = "yes" >Yes</label>
+          </div>
+
+
+      <input type="hidden" name="survey_id" value="<%=@survey_resposne.id %>">
+
+      <button class="btn btn-success">
+        Next Question
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<% if @survey_resposne.J1aLtext == "error" %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      Please answer the question
+    </div>
+<% end %>
+
+<div class="page-header">
+  <h4>In the past 12 months, did you take any street drugs or medicines more than once, to get high, to feel elated, to get “a buzz” or to change your mood? (Do not include medication that is prescribed and used under medical supervision.) </h4>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/J2" method="get">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for J1aLtext -->
+          <div class="radio">
+            <label><input type="radio" id="J1aLtext" name="J1aLtext" value = "no">No</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" id="J1aLtext" name="J1aLtext" value = "yes" >Yes</label>
+          </div>
+
+
+      <input type="hidden" name="survey_id" value="<%=@survey_resposne.id %>">
+
+      <button class="btn btn-success">
+        Next Question
+      </button>
+    </form>
+  </div>
+</div>
