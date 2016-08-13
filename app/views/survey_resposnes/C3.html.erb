@@ -1,0 +1,72 @@
+<% if @survey_resposne.C3a == "error" %>
+<div class="alert alert-dismissable alert-danger">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  Please answer the question
+</div>
+<% end %>
+<h3>Over a period of a few days in the past, when you felt most high and most full of energy or most irritable, did you:
+</h3>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/C4" method="get">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+      <h4>Feel that you could do things others couldn’t do, or that you were an especially important person? </h4>
+      <!-- Label and input for C3 -->
+      <div class="radio">
+        <label><input type="radio" id="C3a" name="C3a" value = "no">No</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" id="C3a" name="C3a" value = "yes" >Yes</label>
+      </div>
+      <h4>Need less sleep (for example, feel rested after only a few hours sleep)? </h4>
+      <div class="radio">
+        <label><input type="radio" id="C3b" name="C3b" value = "no">No</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" id="C3b" name="C3b" value = "yes" >Yes</label>
+      </div>
+      <h4>Talk too much without stopping, or felt a pressure to keep talking? </h4>
+      <div class="radio">
+        <label><input type="radio" id="C3c" name="C3c" value = "no">No</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" id="C3c" name="C3c" value = "yes" >Yes</label>
+      </div>
+      <h4>Notice your thoughts going very fast or running together or racing or moving very quickly from one subject to another?  </h4>
+      <div class="radio">
+        <label><input type="radio" id="C3d" name="C3d" value = "no">No</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" id="C3d" name="C3d" value = "yes" >Yes</label>
+      </div>
+      <h4>Become easily distracted so that any little interruption could distract you? </h4>
+      <div class="radio">
+        <label><input type="radio" id="C3e" name="C3e" value = "no">No</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" id="C3e" name="C3e" value = "yes" >Yes</label>
+      </div>
+      <h4>Have a significant increase in your activity or drive, at work, at school, socially or sexually or did you become physically or mentally restless? This increase in activity may be with or without a purpose.</h4>
+      <div class="radio">
+        <label><input type="radio" id="C3f" name="C3f" value = "no">No</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" id="C3f" name="C3f" value = "yes" >Yes</label>
+      </div>
+      <h4>Want so much to engage in pleasurable activities that you ignored the risks or consequences (for example, spending sprees, reckless driving, or sexual indiscretions)?</h4>
+      <div class="radio">
+        <label><input type="radio" id="C3g" name="C3g" value = "no">No</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" id="C3g" name="C3g" value = "yes" >Yes</label>
+      </div>
+      <input type="hidden" name="survey_id" value="<%=@survey_resposne.id %>">
+
+      <button class="btn btn-success">
+        Next Question
+      </button>
+    </form>
+  </div>
+</div>

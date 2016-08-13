@@ -1,0 +1,36 @@
+<% if @survey_resposne.C1a == "error" %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      Please answer the question
+    </div>
+<% end %>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/C3" method="get">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+  <h4>Have you ever had a period of time when you were feeling ‘up’ or ‘high’ or ‘hyper’ and so active or full of energy or full of yourself that you got into trouble, - or that other people thought you were not your usual self? (Do not consider times when you were intoxicated on drugs or alcohol.) </h4>
+      <!-- Label and input for C1a -->
+          <div class="radio">
+            <label><input type="radio" id="C1a" name="C1a" value = "no">No</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" id="C1a" name="C1a" value = "yes" >Yes</label>
+          </div>
+  <h4>Have you ever been persistently irritable, for several days, so that you had arguments or verbal or physical fights, or shouted at people outside your family? Or have you or others noticed that you have been more irritable or over reacted, compared to other people, even in situations that you felt were justified? </h4>
+          <div class="radio">
+            <label><input type="radio" id="C2a" name="C2a" value = "no">No</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" id="C2a" name="C2a" value = "yes" >Yes</label>
+          </div>
+      <input type="hidden" name="survey_id" value="<%=@survey_resposne.id %>">
+
+      <button class="btn btn-success">
+        Next Question
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<% if @survey_resposne.q8 == "error" %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      Please answer the question
+    </div>
+<% end %>
+
+<div class="page-header">
+  <h4>How did you find out about the study? </h4>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/q9" method="get">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for q8 -->
+          <div class="radio">
+            <label><input type="radio" id="q8" name="q8" value = "Subject Pool">Subject Pool</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" id="q8" name="q8" value = "my.usc.edu announcement board" >my.usc.edu announcement board</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" id="q8" name="q8" value = "Craigslist" >Craigslist</label>
+          </div>
+          <div class="radio">
+            <label for="q8" type="radio">USC psychology course (please specify course number):</label>
+            <input type="text" id="q8" name="q8">
+          </div>
+          <div class="radio">
+            <label><input type="radio" id="q8" name="q8" value = "Craigslist" >USC Psychology Services Center</label>
+          </div>
+          <div class="radio">
+            <label for="q8" type="radio">Other (please specify):</label>
+            <input type="text" id="q8" name="q8">
+          </div>
+      <input type="hidden" name="survey_id" value="<%=@survey_resposne.id %>">
+
+      <button class="btn btn-success">
+        Next Question
+      </button>
+    </form>
+  </div>
+</div>

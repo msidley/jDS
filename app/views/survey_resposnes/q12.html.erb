@@ -1,0 +1,181 @@
+<% if @survey_resposne.q12 == "error" %>
+<div class="alert alert-dismissable alert-danger">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  Please answer the question
+</div>
+<% end %>
+
+<div class="page-header">
+  <h4>Below is a list of common symptoms of anxiety. Please read each item in the list carefully. Indicate how much you have been bothered by each symptom during the PAST WEEK, INCLUDING TODAY using the scale below.</h4>
+</div>
+<form action="/A1a" method="get">
+  <!-- Hidden input for authenticity token to protect from forgery -->
+  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+  <table class="table table-responsive">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Not at all</th>
+        <th>Mildly it did not bother me much</th>
+        <th>Moderately it was very unpleasant but I could stand it</th>
+        <th>Severely I could barely stand it</th>
+      </tr>
+    </thead>
+    <tbody>
+      <form action="/A1a" method="get">
+        <!-- Hidden input for authenticity token to protect from forgery -->
+        <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+        <tr class="bg-primary">
+          <th scope="row">Numbness or tingling</th>
+          <td><input type="radio" name="q12_1" id="q12_1" value="0"</td>
+          <td><input type="radio" name="q12_1" id="q12_1" value="1"</td>
+          <td><input type="radio" name="q12_1" id="q12_1" value="2"</td>
+          <td><input type="radio" name="q12_1" id="q12_1" value="3"</td>
+        </tr>
+        <tr>
+          <th scope="row">Feeling hot</th>
+          <td><input type="radio" name="q12_2" id="q12_2" value="0"</td>
+          <td><input type="radio" name="q12_2" id="q12_2" value="1"</td>
+          <td><input type="radio" name="q12_2" id="q12_2" value="2"</td>
+          <td><input type="radio" name="q12_2" id="q12_2" value="3"</td>
+        </tr>
+        <tr class="bg-primary">
+          <th scope="row">Wobbliness in legs</th>
+          <td><input type="radio" name="q12_3" id="q12_3" value="0"</td>
+          <td><input type="radio" name="q12_3" id="q12_3" value="1"</td>
+          <td><input type="radio" name="q12_3" id="q12_3" value="2"</td>
+          <td><input type="radio" name="q12_3" id="q12_3" value="3"</td>
+        </tr>
+        <tr>
+          <th scope="row">Unable to relax</th>
+          <td><input type="radio" name="q12_4" id="q12_4" value="0"</td>
+          <td><input type="radio" name="q12_4" id="q12_4" value="1"</td>
+          <td><input type="radio" name="q12_4" id="q12_4" value="2"</td>
+          <td><input type="radio" name="q12_4" id="q12_4" value="3"</td>
+        </tr>
+        <tr class="bg-primary">
+          <th scope="row">Fear of the worst happening</th>
+          <td><input type="radio" name="q12_5" id="q12_5" value="0"</td>
+          <td><input type="radio" name="q12_5" id="q12_5" value="1"</td>
+          <td><input type="radio" name="q12_5" id="q12_5" value="2"</td>
+          <td><input type="radio" name="q12_5" id="q12_5" value="3"</td>
+        </tr>
+        <tr>
+          <th scope="row">Dizzy or lightheaded</th>
+          <td><input type="radio" name="q12_6" id="q12_6" value="0"</td>
+          <td><input type="radio" name="q12_6" id="q12_6" value="1"</td>
+          <td><input type="radio" name="q12_6" id="q12_6" value="2"</td>
+          <td><input type="radio" name="q12_6" id="q12_6" value="3"</td>
+        </tr>
+        <tr class="bg-primary">
+          <th scope="row">Heart pounding or racing</th>
+          <td><input type="radio" name="q12_7" id="q12_7" value="0"</td>
+          <td><input type="radio" name="q12_7" id="q12_7" value="1"</td>
+          <td><input type="radio" name="q12_7" id="q12_7" value="2"</td>
+          <td><input type="radio" name="q12_7" id="q12_7" value="3"</td>
+        </tr>
+        <tr>
+          <th scope="row">Unsteady</th>
+          <td><input type="radio" name="q12_8" id="q12_8" value="0"</td>
+          <td><input type="radio" name="q12_8" id="q12_8" value="1"</td>
+          <td><input type="radio" name="q12_8" id="q12_8" value="2"</td>
+          <td><input type="radio" name="q12_8" id="q12_8" value="3"</td>
+        </tr>
+        <tr class="bg-primary">
+          <th scope="row">Terrified</th>
+          <td><input type="radio" name="q12_9" id="q12_9" value="0"</td>
+          <td><input type="radio" name="q12_9" id="q12_9" value="1"</td>
+          <td><input type="radio" name="q12_9" id="q12_9" value="2"</td>
+          <td><input type="radio" name="q12_9" id="q12_9" value="3"</td>
+        </tr>
+        <tr>
+          <th scope="row">Nervous</th>
+          <td><input type="radio" name="q12_10" id="q12_10" value="0"</td>
+          <td><input type="radio" name="q12_10" id="q12_10" value="1"</td>
+          <td><input type="radio" name="q12_10" id="q12_10" value="2"</td>
+          <td><input type="radio" name="q12_10" id="q12_10" value="3"</td>
+        </tr>
+        <tr class="bg-primary">
+          <th scope="row">Feelings of choking</th>
+          <td><input type="radio" name="q12_11" id="q12_11" value="0"</td>
+          <td><input type="radio" name="q12_11" id="q12_11" value="1"</td>
+          <td><input type="radio" name="q12_11" id="q12_11" value="2"</td>
+          <td><input type="radio" name="q12_11" id="q12_11" value="3"</td>
+        </tr>
+        <tr>
+          <th scope="row">Hands trembling</th>
+          <td><input type="radio" name="q12_12" id="q12_12" value="0"</td>
+          <td><input type="radio" name="q12_12" id="q12_12" value="1"</td>
+          <td><input type="radio" name="q12_12" id="q12_12" value="2"</td>
+          <td><input type="radio" name="q12_12" id="q12_12" value="3"</td>
+        </tr>
+        <tr class="bg-primary">
+          <th scope="row">Shaky</th>
+          <td><input type="radio" name="q12_13" id="q12_13" value="0"</td>
+          <td><input type="radio" name="q12_13" id="q12_13" value="1"</td>
+          <td><input type="radio" name="q12_13" id="q12_13" value="2"</td>
+          <td><input type="radio" name="q12_13" id="q12_13" value="3"</td>
+        </tr>
+        <tr>
+          <th scope="row">Fear of losing control</th>
+          <td><input type="radio" name="q12_14" id="q12_14" value="0"</td>
+          <td><input type="radio" name="q12_14" id="q12_14" value="1"</td>
+          <td><input type="radio" name="q12_14" id="q12_14" value="2"</td>
+          <td><input type="radio" name="q12_14" id="q12_14" value="3"</td>
+        </tr>
+        <tr class="bg-primary">
+          <th scope="row">Difficulty breathing</th>
+          <td><input type="radio" name="q12_15" id="q12_15" value="0"</td>
+          <td><input type="radio" name="q12_15" id="q12_15" value="1"</td>
+          <td><input type="radio" name="q12_15" id="q12_15" value="2"</td>
+          <td><input type="radio" name="q12_15" id="q12_15" value="3"</td>
+        </tr>
+        <tr>
+          <th scope="row">Fear of dying</th>
+          <td><input type="radio" name="q12_16" id="q12_16" value="0"</td>
+          <td><input type="radio" name="q12_16" id="q12_16" value="1"</td>
+          <td><input type="radio" name="q12_16" id="q12_16" value="2"</td>
+          <td><input type="radio" name="q12_16" id="q12_16" value="3"</td>
+        </tr>
+        <tr class="bg-primary">
+          <th scope="row">Scared</th>
+          <td><input type="radio" name="q12_17" id="q12_17" value="0"</td>
+          <td><input type="radio" name="q12_17" id="q12_17" value="1"</td>
+          <td><input type="radio" name="q12_17" id="q12_17" value="2"</td>
+          <td><input type="radio" name="q12_17" id="q12_17" value="3"</td>
+        </tr>
+        <tr>
+          <th scope="row">Indigestion or discomfort in abdomen</th>
+          <td><input type="radio" name="q12_18" id="q12_18" value="0"</td>
+          <td><input type="radio" name="q12_18" id="q12_18" value="1"</td>
+          <td><input type="radio" name="q12_18" id="q12_18" value="2"</td>
+          <td><input type="radio" name="q12_18" id="q12_18" value="3"</td>
+        </tr>
+        <tr class="bg-primary">
+          <th scope="row">Faint</th>
+          <td><input type="radio" name="q12_19" id="q12_19" value="0"</td>
+          <td><input type="radio" name="q12_19" id="q12_19" value="1"</td>
+          <td><input type="radio" name="q12_19" id="q12_19" value="2"</td>
+          <td><input type="radio" name="q12_19" id="q12_19" value="3"</td>
+        </tr>
+        <tr>
+          <th scope="row">Face flushed</th>
+          <td><input type="radio" name="q12_20" id="q12_20" value="0"</td>
+          <td><input type="radio" name="q12_20" id="q12_20" value="1"</td>
+          <td><input type="radio" name="q12_20" id="q12_20" value="2"</td>
+          <td><input type="radio" name="q12_20" id="q12_20" value="3"</td>
+        </tr>
+        <tr class="bg-primary">
+          <th scope="row">Sweating (not due to heat)</th>
+          <td><input type="radio" name="q12_21" id="q12_21" value="0"</td>
+          <td><input type="radio" name="q12_21" id="q12_21" value="1"</td>
+          <td><input type="radio" name="q12_21" id="q12_21" value="2"</td>
+          <td><input type="radio" name="q12_21" id="q12_21" value="3"</td>
+        </tr>
+        <input type="hidden" name="survey_id" value="<%=@survey_resposne.id %>">
+      </form>
+    </tbody>
+  </table>
+      <button class="btn btn-success">
+        Next Question
+      </button>

@@ -1,0 +1,33 @@
+<% if @survey_resposne.A3g == "error" %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      Please answer the question
+    </div>
+<% end %>
+
+<div class="page-header">
+  <h4>In the past three months, did you repeatedly think about death (fear of dying does not count here) or have any thoughts of killing yourself, or have any intent or plan to kill yourself?</h4>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/C1a" method="get">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for A3g -->
+          <div class="radio">
+            <label><input type="radio" id="A3g" name="A3g" value = "no">No</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" id="A3g" name="A3g" value = "yes" >Yes</label>
+          </div>
+
+      <input type="hidden" name="survey_id" value="<%=@survey_resposne.id %>">
+
+      <button class="btn btn-success">
+        Next Question
+      </button>
+    </form>
+  </div>
+</div>

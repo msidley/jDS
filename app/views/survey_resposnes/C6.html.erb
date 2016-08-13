@@ -1,0 +1,34 @@
+<% if @survey_resposne.C6 == "error" %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      Please answer the question
+    </div>
+<% end %>
+
+<div class="page-header">
+  <h4>Did these symptoms cause significant problems at home, at work, socially, in your relationships, at school or in some other important way? </h4>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/C7" method="get">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for C6 -->
+          <div class="radio">
+            <label><input type="radio" id="C6" name="C6" value = "no">No</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" id="C6" name="C6" value = "yes" >Yes</label>
+          </div>
+
+
+      <input type="hidden" name="survey_id" value="<%=@survey_resposne.id %>">
+
+      <button class="btn btn-success">
+        Next Question
+      </button>
+    </form>
+  </div>
+</div>

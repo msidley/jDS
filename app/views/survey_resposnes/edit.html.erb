@@ -1,0 +1,784 @@
+<!-- Validation failure messages -->
+<% if @survey_resposne.errors.any? %>
+  <% @survey_resposne.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Survey Resposne #<%= @survey_resposne.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_survey_resposne/<%= @survey_resposne.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for q1 -->
+      <div class="form-group">
+        <label for="q1" class="control-label">
+          Q1
+        </label>
+
+        <textarea id="q1" name="q1" placeholder="Q1" class="form-control" rows="3"><%= @survey_resposne.q1 %></textarea>
+      </div>
+
+      <!-- Label and input for q2 -->
+      <div class="form-group">
+        <label for="q2" class="control-label">
+          Q2
+        </label>
+
+        <textarea id="q2" name="q2" placeholder="Q2" class="form-control" rows="3"><%= @survey_resposne.q2 %></textarea>
+      </div>
+
+      <!-- Label and input for q3 -->
+      <div class="form-group">
+        <label for="q3" class="control-label">
+          Q3
+        </label>
+
+        <textarea id="q3" name="q3" placeholder="Q3" class="form-control" rows="3"><%= @survey_resposne.q3 %></textarea>
+      </div>
+
+      <!-- Label and input for q4 -->
+      <div class="form-group">
+        <label for="q4" class="control-label">
+          Q4
+        </label>
+
+        <textarea id="q4" name="q4" placeholder="Q4" class="form-control" rows="3"><%= @survey_resposne.q4 %></textarea>
+      </div>
+
+      <!-- Label and input for q5 -->
+      <div class="form-group">
+        <label for="q5" class="control-label">
+          Q5
+        </label>
+
+        <textarea id="q5" name="q5" placeholder="Q5" class="form-control" rows="3"><%= @survey_resposne.q5 %></textarea>
+      </div>
+
+      <!-- Label and input for q6 -->
+      <div class="form-group">
+        <label for="q6" class="control-label">
+          Q6
+        </label>
+
+        <textarea id="q6" name="q6" placeholder="Q6" class="form-control" rows="3"><%= @survey_resposne.q6 %></textarea>
+      </div>
+
+      <!-- Label and input for q7 -->
+      <div class="form-group">
+        <label for="q7" class="control-label">
+          Q7
+        </label>
+
+        <textarea id="q7" name="q7" placeholder="Q7" class="form-control" rows="3"><%= @survey_resposne.q7 %></textarea>
+      </div>
+
+      <!-- Label and input for q8 -->
+      <div class="form-group">
+        <label for="q8" class="control-label">
+          Q8
+        </label>
+
+        <textarea id="q8" name="q8" placeholder="Q8" class="form-control" rows="3"><%= @survey_resposne.q8 %></textarea>
+      </div>
+
+      <!-- Label and input for q9 -->
+      <div class="form-group">
+        <label for="q9" class="control-label">
+          Q9
+        </label>
+
+        <textarea id="q9" name="q9" placeholder="Q9" class="form-control" rows="3"><%= @survey_resposne.q9 %></textarea>
+      </div>
+
+      <!-- Label and input for q10 -->
+      <div class="form-group">
+        <label for="q10" class="control-label">
+          Q10
+        </label>
+
+        <textarea id="q10" name="q10" placeholder="Q10" class="form-control" rows="3"><%= @survey_resposne.q10 %></textarea>
+      </div>
+
+      <!-- Label and input for q11 -->
+      <div class="form-group">
+        <label for="q11" class="control-label">
+          Q11
+        </label>
+
+        <textarea id="q11" name="q11" placeholder="Q11" class="form-control" rows="3"><%= @survey_resposne.q11 %></textarea>
+      </div>
+
+      <!-- Label and input for q12 -->
+      <div class="form-group">
+        <label for="q12" class="control-label">
+          Q12
+        </label>
+
+        <input type="text" id="q12" name="q12" placeholder="Q12" class="form-control" value="<%= @survey_resposne.q12 %>">
+      </div>
+
+      <!-- Label and input for A1a -->
+      <div class="form-group">
+        <label for="A1a" class="control-label">
+          A1a
+        </label>
+
+        <textarea id="A1a" name="A1a" placeholder="A1a" class="form-control" rows="3"><%= @survey_resposne.A1a %></textarea>
+      </div>
+
+      <!-- Label and input for A2b -->
+      <div class="form-group">
+        <label for="A2b" class="control-label">
+          A2b
+        </label>
+
+        <textarea id="A2b" name="A2b" placeholder="A2b" class="form-control" rows="3"><%= @survey_resposne.A2b %></textarea>
+      </div>
+
+      <!-- Label and input for A3g -->
+      <div class="form-group">
+        <label for="A3g" class="control-label">
+          A3g
+        </label>
+
+        <textarea id="A3g" name="A3g" placeholder="A3g" class="form-control" rows="3"><%= @survey_resposne.A3g %></textarea>
+      </div>
+
+      <!-- Label and input for C1a -->
+      <div class="form-group">
+        <label for="C1a" class="control-label">
+          C1a
+        </label>
+
+        <textarea id="C1a" name="C1a" placeholder="C1a" class="form-control" rows="3"><%= @survey_resposne.C1a %></textarea>
+      </div>
+
+      <!-- Label and input for C2a -->
+      <div class="form-group">
+        <label for="C2a" class="control-label">
+          C2a
+        </label>
+
+        <textarea id="C2a" name="C2a" placeholder="C2a" class="form-control" rows="3"><%= @survey_resposne.C2a %></textarea>
+      </div>
+
+      <!-- Label and input for C3a -->
+      <div class="form-group">
+        <label for="C3a" class="control-label">
+          C3a
+        </label>
+
+        <textarea id="C3a" name="C3a" placeholder="C3a" class="form-control" rows="3"><%= @survey_resposne.C3a %></textarea>
+      </div>
+
+      <!-- Label and input for C3b -->
+      <div class="form-group">
+        <label for="C3b" class="control-label">
+          C3b
+        </label>
+
+        <textarea id="C3b" name="C3b" placeholder="C3b" class="form-control" rows="3"><%= @survey_resposne.C3b %></textarea>
+      </div>
+
+      <!-- Label and input for C3c -->
+      <div class="form-group">
+        <label for="C3c" class="control-label">
+          C3c
+        </label>
+
+        <textarea id="C3c" name="C3c" placeholder="C3c" class="form-control" rows="3"><%= @survey_resposne.C3c %></textarea>
+      </div>
+
+      <!-- Label and input for C3d -->
+      <div class="form-group">
+        <label for="C3d" class="control-label">
+          C3d
+        </label>
+
+        <textarea id="C3d" name="C3d" placeholder="C3d" class="form-control" rows="3"><%= @survey_resposne.C3d %></textarea>
+      </div>
+
+      <!-- Label and input for C3e -->
+      <div class="form-group">
+        <label for="C3e" class="control-label">
+          C3e
+        </label>
+
+        <textarea id="C3e" name="C3e" placeholder="C3e" class="form-control" rows="3"><%= @survey_resposne.C3e %></textarea>
+      </div>
+
+      <!-- Label and input for C3f -->
+      <div class="form-group">
+        <label for="C3f" class="control-label">
+          C3f
+        </label>
+
+        <textarea id="C3f" name="C3f" placeholder="C3f" class="form-control" rows="3"><%= @survey_resposne.C3f %></textarea>
+      </div>
+
+      <!-- Label and input for C3g -->
+      <div class="form-group">
+        <label for="C3g" class="control-label">
+          C3g
+        </label>
+
+        <textarea id="C3g" name="C3g" placeholder="C3g" class="form-control" rows="3"><%= @survey_resposne.C3g %></textarea>
+      </div>
+
+      <!-- Label and input for C4 -->
+      <div class="form-group">
+        <label for="C4" class="control-label">
+          C4
+        </label>
+
+        <textarea id="C4" name="C4" placeholder="C4" class="form-control" rows="3"><%= @survey_resposne.C4 %></textarea>
+      </div>
+
+      <!-- Label and input for C5 -->
+      <div class="form-group">
+        <label for="C5" class="control-label">
+          C5
+        </label>
+
+        <textarea id="C5" name="C5" placeholder="C5" class="form-control" rows="3"><%= @survey_resposne.C5 %></textarea>
+      </div>
+
+      <!-- Label and input for C6 -->
+      <div class="form-group">
+        <label for="C6" class="control-label">
+          C6
+        </label>
+
+        <textarea id="C6" name="C6" placeholder="C6" class="form-control" rows="3"><%= @survey_resposne.C6 %></textarea>
+      </div>
+
+      <!-- Label and input for C7 -->
+      <div class="form-group">
+        <label for="C7" class="control-label">
+          C7
+        </label>
+
+        <textarea id="C7" name="C7" placeholder="C7" class="form-control" rows="3"><%= @survey_resposne.C7 %></textarea>
+      </div>
+
+      <!-- Label and input for I1 -->
+      <div class="form-group">
+        <label for="I1" class="control-label">
+          I1
+        </label>
+
+        <textarea id="I1" name="I1" placeholder="I1" class="form-control" rows="3"><%= @survey_resposne.I1 %></textarea>
+      </div>
+
+      <!-- Label and input for I2a -->
+      <div class="form-group">
+        <label for="I2a" class="control-label">
+          I2a
+        </label>
+
+        <textarea id="I2a" name="I2a" placeholder="I2a" class="form-control" rows="3"><%= @survey_resposne.I2a %></textarea>
+      </div>
+
+      <!-- Label and input for I2b -->
+      <div class="form-group">
+        <label for="I2b" class="control-label">
+          I2b
+        </label>
+
+        <textarea id="I2b" name="I2b" placeholder="I2b" class="form-control" rows="3"><%= @survey_resposne.I2b %></textarea>
+      </div>
+
+      <!-- Label and input for I2c -->
+      <div class="form-group">
+        <label for="I2c" class="control-label">
+          I2c
+        </label>
+
+        <textarea id="I2c" name="I2c" placeholder="I2c" class="form-control" rows="3"><%= @survey_resposne.I2c %></textarea>
+      </div>
+
+      <!-- Label and input for I2d -->
+      <div class="form-group">
+        <label for="I2d" class="control-label">
+          I2d
+        </label>
+
+        <textarea id="I2d" name="I2d" placeholder="I2d" class="form-control" rows="3"><%= @survey_resposne.I2d %></textarea>
+      </div>
+
+      <!-- Label and input for I2e -->
+      <div class="form-group">
+        <label for="I2e" class="control-label">
+          I2e
+        </label>
+
+        <textarea id="I2e" name="I2e" placeholder="I2e" class="form-control" rows="3"><%= @survey_resposne.I2e %></textarea>
+      </div>
+
+      <!-- Label and input for I2f -->
+      <div class="form-group">
+        <label for="I2f" class="control-label">
+          I2f
+        </label>
+
+        <textarea id="I2f" name="I2f" placeholder="I2f" class="form-control" rows="3"><%= @survey_resposne.I2f %></textarea>
+      </div>
+
+      <!-- Label and input for I2g -->
+      <div class="form-group">
+        <label for="I2g" class="control-label">
+          I2g
+        </label>
+
+        <textarea id="I2g" name="I2g" placeholder="I2g" class="form-control" rows="3"><%= @survey_resposne.I2g %></textarea>
+      </div>
+
+      <!-- Label and input for I2h -->
+      <div class="form-group">
+        <label for="I2h" class="control-label">
+          I2h
+        </label>
+
+        <textarea id="I2h" name="I2h" placeholder="I2h" class="form-control" rows="3"><%= @survey_resposne.I2h %></textarea>
+      </div>
+
+      <!-- Label and input for I2i -->
+      <div class="form-group">
+        <label for="I2i" class="control-label">
+          I2i
+        </label>
+
+        <textarea id="I2i" name="I2i" placeholder="I2i" class="form-control" rows="3"><%= @survey_resposne.I2i %></textarea>
+      </div>
+
+      <!-- Label and input for I2j -->
+      <div class="form-group">
+        <label for="I2j" class="control-label">
+          I2j
+        </label>
+
+        <textarea id="I2j" name="I2j" placeholder="I2j" class="form-control" rows="3"><%= @survey_resposne.I2j %></textarea>
+      </div>
+
+      <!-- Label and input for I2k1 -->
+      <div class="form-group">
+        <label for="I2k1" class="control-label">
+          I2k1
+        </label>
+
+        <textarea id="I2k1" name="I2k1" placeholder="I2k1" class="form-control" rows="3"><%= @survey_resposne.I2k1 %></textarea>
+      </div>
+
+      <!-- Label and input for I2k2 -->
+      <div class="form-group">
+        <label for="I2k2" class="control-label">
+          I2k2
+        </label>
+
+        <textarea id="I2k2" name="I2k2" placeholder="I2k2" class="form-control" rows="3"><%= @survey_resposne.I2k2 %></textarea>
+      </div>
+
+      <!-- Label and input for J1aLtext -->
+      <div class="form-group">
+        <label for="J1aLtext" class="control-label">
+          J1altext
+        </label>
+
+        <input type="text" id="J1aLtext" name="J1aLtext" placeholder="J1altext" class="form-control" value="<%= @survey_resposne.J1aLtext %>">
+      </div>
+
+      <!-- Label and input for J2a -->
+      <div class="form-group">
+        <label for="J2a" class="control-label">
+          J2a
+        </label>
+
+        <textarea id="J2a" name="J2a" placeholder="J2a" class="form-control" rows="3"><%= @survey_resposne.J2a %></textarea>
+      </div>
+
+      <!-- Label and input for J2b -->
+      <div class="form-group">
+        <label for="J2b" class="control-label">
+          J2b
+        </label>
+
+        <textarea id="J2b" name="J2b" placeholder="J2b" class="form-control" rows="3"><%= @survey_resposne.J2b %></textarea>
+      </div>
+
+      <!-- Label and input for J2c -->
+      <div class="form-group">
+        <label for="J2c" class="control-label">
+          J2c
+        </label>
+
+        <textarea id="J2c" name="J2c" placeholder="J2c" class="form-control" rows="3"><%= @survey_resposne.J2c %></textarea>
+      </div>
+
+      <!-- Label and input for J2d -->
+      <div class="form-group">
+        <label for="J2d" class="control-label">
+          J2d
+        </label>
+
+        <textarea id="J2d" name="J2d" placeholder="J2d" class="form-control" rows="3"><%= @survey_resposne.J2d %></textarea>
+      </div>
+
+      <!-- Label and input for J2e -->
+      <div class="form-group">
+        <label for="J2e" class="control-label">
+          J2e
+        </label>
+
+        <textarea id="J2e" name="J2e" placeholder="J2e" class="form-control" rows="3"><%= @survey_resposne.J2e %></textarea>
+      </div>
+
+      <!-- Label and input for J2f -->
+      <div class="form-group">
+        <label for="J2f" class="control-label">
+          J2f
+        </label>
+
+        <textarea id="J2f" name="J2f" placeholder="J2f" class="form-control" rows="3"><%= @survey_resposne.J2f %></textarea>
+      </div>
+
+      <!-- Label and input for J2g -->
+      <div class="form-group">
+        <label for="J2g" class="control-label">
+          J2g
+        </label>
+
+        <textarea id="J2g" name="J2g" placeholder="J2g" class="form-control" rows="3"><%= @survey_resposne.J2g %></textarea>
+      </div>
+
+      <!-- Label and input for J2h -->
+      <div class="form-group">
+        <label for="J2h" class="control-label">
+          J2h
+        </label>
+
+        <textarea id="J2h" name="J2h" placeholder="J2h" class="form-control" rows="3"><%= @survey_resposne.J2h %></textarea>
+      </div>
+
+      <!-- Label and input for J2i -->
+      <div class="form-group">
+        <label for="J2i" class="control-label">
+          J2i
+        </label>
+
+        <textarea id="J2i" name="J2i" placeholder="J2i" class="form-control" rows="3"><%= @survey_resposne.J2i %></textarea>
+      </div>
+
+      <!-- Label and input for J2j -->
+      <div class="form-group">
+        <label for="J2j" class="control-label">
+          J2j
+        </label>
+
+        <textarea id="J2j" name="J2j" placeholder="J2j" class="form-control" rows="3"><%= @survey_resposne.J2j %></textarea>
+      </div>
+
+      <!-- Label and input for J2k1 -->
+      <div class="form-group">
+        <label for="J2k1" class="control-label">
+          J2k1
+        </label>
+
+        <textarea id="J2k1" name="J2k1" placeholder="J2k1" class="form-control" rows="3"><%= @survey_resposne.J2k1 %></textarea>
+      </div>
+
+      <!-- Label and input for J2k2 -->
+      <div class="form-group">
+        <label for="J2k2" class="control-label">
+          J2k2
+        </label>
+
+        <textarea id="J2k2" name="J2k2" placeholder="J2k2" class="form-control" rows="3"><%= @survey_resposne.J2k2 %></textarea>
+      </div>
+
+      <!-- Label and input for K1a -->
+      <div class="form-group">
+        <label for="K1a" class="control-label">
+          K1a
+        </label>
+
+        <textarea id="K1a" name="K1a" placeholder="K1a" class="form-control" rows="3"><%= @survey_resposne.K1a %></textarea>
+      </div>
+
+      <!-- Label and input for K2a -->
+      <div class="form-group">
+        <label for="K2a" class="control-label">
+          K2a
+        </label>
+
+        <textarea id="K2a" name="K2a" placeholder="K2a" class="form-control" rows="3"><%= @survey_resposne.K2a %></textarea>
+      </div>
+
+      <!-- Label and input for K3a -->
+      <div class="form-group">
+        <label for="K3a" class="control-label">
+          K3a
+        </label>
+
+        <textarea id="K3a" name="K3a" placeholder="K3a" class="form-control" rows="3"><%= @survey_resposne.K3a %></textarea>
+      </div>
+
+      <!-- Label and input for K4a -->
+      <div class="form-group">
+        <label for="K4a" class="control-label">
+          K4a
+        </label>
+
+        <textarea id="K4a" name="K4a" placeholder="K4a" class="form-control" rows="3"><%= @survey_resposne.K4a %></textarea>
+      </div>
+
+      <!-- Label and input for K5a -->
+      <div class="form-group">
+        <label for="K5a" class="control-label">
+          K5a
+        </label>
+
+        <textarea id="K5a" name="K5a" placeholder="K5a" class="form-control" rows="3"><%= @survey_resposne.K5a %></textarea>
+      </div>
+
+      <!-- Label and input for K6a -->
+      <div class="form-group">
+        <label for="K6a" class="control-label">
+          K6a
+        </label>
+
+        <textarea id="K6a" name="K6a" placeholder="K6a" class="form-control" rows="3"><%= @survey_resposne.K6a %></textarea>
+      </div>
+
+      <!-- Label and input for K7a -->
+      <div class="form-group">
+        <label for="K7a" class="control-label">
+          K7a
+        </label>
+
+        <textarea id="K7a" name="K7a" placeholder="K7a" class="form-control" rows="3"><%= @survey_resposne.K7a %></textarea>
+      </div>
+
+      <!-- Label and input for L1a -->
+      <div class="form-group">
+        <label for="L1a" class="control-label">
+          L1a
+        </label>
+
+        <textarea id="L1a" name="L1a" placeholder="L1a" class="form-control" rows="3"><%= @survey_resposne.L1a %></textarea>
+      </div>
+
+      <!-- Label and input for L1b -->
+      <div class="form-group">
+        <label for="L1b" class="control-label">
+          L1b
+        </label>
+
+        <textarea id="L1b" name="L1b" placeholder="L1b" class="form-control" rows="3"><%= @survey_resposne.L1b %></textarea>
+      </div>
+
+      <!-- Label and input for L2 -->
+      <div class="form-group">
+        <label for="L2" class="control-label">
+          L2
+        </label>
+
+        <textarea id="L2" name="L2" placeholder="L2" class="form-control" rows="3"><%= @survey_resposne.L2 %></textarea>
+      </div>
+
+      <!-- Label and input for L3 -->
+      <div class="form-group">
+        <label for="L3" class="control-label">
+          L3
+        </label>
+
+        <textarea id="L3" name="L3" placeholder="L3" class="form-control" rows="3"><%= @survey_resposne.L3 %></textarea>
+      </div>
+
+      <!-- Label and input for L4a -->
+      <div class="form-group">
+        <label for="L4a" class="control-label">
+          L4a
+        </label>
+
+        <textarea id="L4a" name="L4a" placeholder="L4a" class="form-control" rows="3"><%= @survey_resposne.L4a %></textarea>
+      </div>
+
+      <!-- Label and input for L4b -->
+      <div class="form-group">
+        <label for="L4b" class="control-label">
+          L4b
+        </label>
+
+        <textarea id="L4b" name="L4b" placeholder="L4b" class="form-control" rows="3"><%= @survey_resposne.L4b %></textarea>
+      </div>
+
+      <!-- Label and input for L4c -->
+      <div class="form-group">
+        <label for="L4c" class="control-label">
+          L4c
+        </label>
+
+        <textarea id="L4c" name="L4c" placeholder="L4c" class="form-control" rows="3"><%= @survey_resposne.L4c %></textarea>
+      </div>
+
+      <!-- Label and input for M1 -->
+      <div class="form-group">
+        <label for="M1" class="control-label">
+          M1
+        </label>
+
+        <textarea id="M1" name="M1" placeholder="M1" class="form-control" rows="3"><%= @survey_resposne.M1 %></textarea>
+      </div>
+
+      <!-- Label and input for M2 -->
+      <div class="form-group">
+        <label for="M2" class="control-label">
+          M2
+        </label>
+
+        <textarea id="M2" name="M2" placeholder="M2" class="form-control" rows="3"><%= @survey_resposne.M2 %></textarea>
+      </div>
+
+      <!-- Label and input for M3 -->
+      <div class="form-group">
+        <label for="M3" class="control-label">
+          M3
+        </label>
+
+        <textarea id="M3" name="M3" placeholder="M3" class="form-control" rows="3"><%= @survey_resposne.M3 %></textarea>
+      </div>
+
+      <!-- Label and input for M3a -->
+      <div class="form-group">
+        <label for="M3a" class="control-label">
+          M3a
+        </label>
+
+        <textarea id="M3a" name="M3a" placeholder="M3a" class="form-control" rows="3"><%= @survey_resposne.M3a %></textarea>
+      </div>
+
+      <!-- Label and input for M4 -->
+      <div class="form-group">
+        <label for="M4" class="control-label">
+          M4
+        </label>
+
+        <textarea id="M4" name="M4" placeholder="M4" class="form-control" rows="3"><%= @survey_resposne.M4 %></textarea>
+      </div>
+
+      <!-- Label and input for M5 -->
+      <div class="form-group">
+        <label for="M5" class="control-label">
+          M5
+        </label>
+
+        <textarea id="M5" name="M5" placeholder="M5" class="form-control" rows="3"><%= @survey_resposne.M5 %></textarea>
+      </div>
+
+      <!-- Label and input for qe1 -->
+      <div class="form-group">
+        <label for="qe1" class="control-label">
+          Qe1
+        </label>
+
+        <textarea id="qe1" name="qe1" placeholder="Qe1" class="form-control" rows="3"><%= @survey_resposne.qe1 %></textarea>
+      </div>
+
+      <!-- Label and input for qe2 -->
+      <div class="form-group">
+        <label for="qe2" class="control-label">
+          Qe2
+        </label>
+
+        <textarea id="qe2" name="qe2" placeholder="Qe2" class="form-control" rows="3"><%= @survey_resposne.qe2 %></textarea>
+      </div>
+
+      <!-- Label and input for qe3 -->
+      <div class="form-group">
+        <label for="qe3" class="control-label">
+          Qe3
+        </label>
+
+        <textarea id="qe3" name="qe3" placeholder="Qe3" class="form-control" rows="3"><%= @survey_resposne.qe3 %></textarea>
+      </div>
+
+      <!-- Label and input for qe4 -->
+      <div class="form-group">
+        <label for="qe4" class="control-label">
+          Qe4
+        </label>
+
+        <textarea id="qe4" name="qe4" placeholder="Qe4" class="form-control" rows="3"><%= @survey_resposne.qe4 %></textarea>
+      </div>
+
+      <!-- Label and input for qe5 -->
+      <div class="form-group">
+        <label for="qe5" class="control-label">
+          Qe5
+        </label>
+
+        <textarea id="qe5" name="qe5" placeholder="Qe5" class="form-control" rows="3"><%= @survey_resposne.qe5 %></textarea>
+      </div>
+
+      <!-- Label and input for qe6 -->
+      <div class="form-group">
+        <label for="qe6" class="control-label">
+          Qe6
+        </label>
+
+        <textarea id="qe6" name="qe6" placeholder="Qe6" class="form-control" rows="3"><%= @survey_resposne.qe6 %></textarea>
+      </div>
+
+      <!-- Label and input for qe7 -->
+      <div class="form-group">
+        <label for="qe7" class="control-label">
+          Qe7
+        </label>
+
+        <textarea id="qe7" name="qe7" placeholder="Qe7" class="form-control" rows="3"><%= @survey_resposne.qe7 %></textarea>
+      </div>
+
+      <!-- Label and input for qe8 -->
+      <div class="form-group">
+        <label for="qe8" class="control-label">
+          Qe8
+        </label>
+
+        <textarea id="qe8" name="qe8" placeholder="Qe8" class="form-control" rows="3"><%= @survey_resposne.qe8 %></textarea>
+      </div>
+
+      <!-- Label and input for qe9 -->
+      <div class="form-group">
+        <label for="qe9" class="control-label">
+          Qe9
+        </label>
+
+        <textarea id="qe9" name="qe9" placeholder="Qe9" class="form-control" rows="3"><%= @survey_resposne.qe9 %></textarea>
+      </div>
+
+      <!-- Label and input for qe10 -->
+      <div class="form-group">
+        <label for="qe10" class="control-label">
+          Qe10
+        </label>
+
+        <textarea id="qe10" name="qe10" placeholder="Qe10" class="form-control" rows="3"><%= @survey_resposne.qe10 %></textarea>
+      </div>
+
+      <button class="btn btn-warning">
+        Update Survey Resposne
+      </button>
+      or
+      <a href="/survey_resposnes/<%= @survey_resposne.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

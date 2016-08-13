@@ -1,0 +1,38 @@
+<% if @survey_resposne.C4 == "error" %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      Please answer the question
+    </div>
+<% end %>
+
+<div class="page-header">
+  <h4>What is the longest time these symptoms lasted (most of the day nearly every day)? </h4>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/C5" method="get">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for C4 -->
+          <div class="radio">
+            <label><input type="radio" id="C4" name="C4" value = "3 days or less
+">3 days or less</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" id="C4" name="C4" value = "4-6 days" >4-6 days</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" id="C4" name="C4" value = "7 days or more" >7 days or more</label>
+          </div>
+
+
+      <input type="hidden" name="survey_id" value="<%=@survey_resposne.id %>">
+
+      <button class="btn btn-success">
+        Next Question
+      </button>
+    </form>
+  </div>
+</div>

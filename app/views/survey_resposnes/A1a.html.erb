@@ -1,0 +1,36 @@
+<% if @survey_resposne.A1a == "error" %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      Please answer the question
+    </div>
+<% end %>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/A3g" method="get">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+  <h4>In the past three months, were you depressed or down, or felt sad, empty or hopeless most of the day, nearly every day? </h4>
+      <!-- Label and input for A1a -->
+          <div class="radio">
+            <label><input type="radio" id="A1a" name="A1a" value = "no">No</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" id="A1a" name="A1a" value = "yes" >Yes</label>
+          </div>
+  <h4>In the past three months, were you much less interested in most things or much less able to enjoy the things you used to enjoy, most of the time? </h4>
+          <div class="radio">
+            <label><input type="radio" id="A2b" name="A2b" value = "no">No</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" id="A2b" name="A2b" value = "yes" >Yes</label>
+          </div>
+      <input type="hidden" name="survey_id" value="<%=@survey_resposne.id %>">
+
+      <button class="btn btn-success">
+        Next Question
+      </button>
+    </form>
+  </div>
+</div>

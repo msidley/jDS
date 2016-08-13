@@ -1,4 +1,46 @@
 Rails.application.routes.draw do
+  # Routes for the Survey_resposne resource:
+  devise_for :users
+  get "/", :controller => "home", :action => "start"
+
+  # Questions
+  get "/q1", :controller => "survey_resposnes", :action => "q1"
+  get "/q2", :controller => "survey_resposnes", :action => "q2"
+  get "/q3", :controller => "survey_resposnes", :action => "q3"
+  get "/q4", :controller => "survey_resposnes", :action => "q4"
+  get "/q5", :controller => "survey_resposnes", :action => "q5"
+  get "/q6", :controller => "survey_resposnes", :action => "q6"
+  get "/q7", :controller => "survey_resposnes", :action => "q7"
+  get "/q8", :controller => "survey_resposnes", :action => "q8"
+  get "/q9", :controller => "survey_resposnes", :action => "q9"
+  get "/q10", :controller => "survey_resposnes", :action => "q10"
+  get "/q11", :controller => "survey_resposnes", :action => "q11"
+  get "/q12", :controller => "survey_resposnes", :action => "q12"
+  get "/A1a", :controller => "survey_resposnes", :action => "A1a"
+  get "/A3g", :controller => "survey_resposnes", :action => "A3g"
+  get "/C1a", :controller => "survey_resposnes", :action => "C1a"
+  get "/C3", :controller => "survey_resposnes", :action => "C3"
+  get "/C4", :controller => "survey_resposnes", :action => "C4"
+  get "/C5", :controller => "survey_resposnes", :action => "C5"
+  get "/C6", :controller => "survey_resposnes", :action => "C6"
+  get "/C7", :controller => "survey_resposnes", :action => "C7"
+  get "/I1", :controller => "survey_resposnes", :action => "I1"
+
+  post "/create_survey_resposne", :controller => "survey_resposnes", :action => "create"
+  get "/ineligible", :controller => "survey_resposnes", :action => "ineligible"
+  # READ
+  get "/survey_resposnes", :controller => "survey_resposnes", :action => "index"
+  get "/survey_resposnes/:id", :controller => "survey_resposnes", :action => "show"
+
+  # UPDATE
+  get "/survey_resposnes/:id/edit", :controller => "survey_resposnes", :action => "edit"
+  post "/update_survey_resposne/:id", :controller => "survey_resposnes", :action => "update"
+
+  # DELETE
+  get "/delete_survey_resposne/:id", :controller => "survey_resposnes", :action => "destroy"
+  #------------------------------
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

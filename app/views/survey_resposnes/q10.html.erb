@@ -1,0 +1,33 @@
+<% if @survey_resposne.q10 == "error" %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      Please answer the question
+    </div>
+<% end %>
+
+<div class="page-header">
+  <h4>Are you currently taking any psychiatric or psychotropic medication?</h4>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/q11" method="get">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for q10 -->
+          <div class="radio">
+            <label><input type="radio" id="q10" name="q10" value = "no">No</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" id="q10" name="q10" value = "yes" >Yes</label>
+          </div>
+
+      <input type="hidden" name="survey_id" value="<%=@survey_resposne.id %>">
+
+      <button class="btn btn-success">
+        Next Question
+      </button>
+    </form>
+  </div>
+</div>
