@@ -307,8 +307,86 @@ class SurveyResposnesController < ApplicationController
       render('ineligible.html.erb')
     end
   end
-
-
+  def I2
+    @survey_resposne = SurveyResposne.find(params[:survey_id])
+    @survey_resposne.I1 = params[:I1]
+    @survey_resposne.save
+    if @survey_resposne.I1 == nil or @survey_resposne.I1 == "error"
+      @survey_resposne.I1 = "error"
+      @survey_resposne.save
+      render('I1.html.erb')
+    end
+    if @survey_resposne.I1 == "no"
+      render('J1.html.erb')
+    end
+  end
+  def J1
+    @survey_resposne = SurveyResposne.find(params[:survey_id])
+    @survey_resposne.I2a = params[:I2a]
+    @survey_resposne.I2b = params[:I2b]
+    @survey_resposne.I2c = params[:I2c]
+    @survey_resposne.I2d = params[:I2d]
+    @survey_resposne.I2e = params[:I2e]
+    @survey_resposne.I2f = params[:I2f]
+    @survey_resposne.I2g = params[:I2g]
+    @survey_resposne.I2h = params[:I2h]
+    @survey_resposne.I2i = params[:I2i]
+    @survey_resposne.I2j = params[:I2j]
+    @survey_resposne.I2k1 = params[:I2k1]
+    @survey_resposne.I2k2 = params[:I2k2]
+    @survey_resposne.save
+    if @survey_resposne.I2a == nil or @survey_resposne.I2a == "error" || @survey_resposne.I2b == nil or @survey_resposne.I2b == "error" || @survey_resposne.I2c == nil or @survey_resposne.I2c == "error" || @survey_resposne.I2d == nil or @survey_resposne.I2d == "error" || @survey_resposne.I2e == nil or @survey_resposne.I2e == "error" || @survey_resposne.I2f == nil or @survey_resposne.I2f == "error" || @survey_resposne.I2g == nil or @survey_resposne.I2g == "error" || @survey_resposne.I2h == nil or @survey_resposne.I2h == "error" || @survey_resposne.I2i == nil or @survey_resposne.I2i == "error" || @survey_resposne.I2j == nil or @survey_resposne.I2j == "error" || @survey_resposne.I2k1 == nil or @survey_resposne.I2k1 == "error"  || @survey_resposne.I2k2 == nil or @survey_resposne.I2k2 == "error"
+      @survey_resposne.I2a = "error"
+      @survey_resposne.I2b = "error"
+      @survey_resposne.I2c = "error"
+      @survey_resposne.I2d = "error"
+      @survey_resposne.I2e = "error"
+      @survey_resposne.I2f = "error"
+      @survey_resposne.I2g = "error"
+      @survey_resposne.I2h ="error"
+      @survey_resposne.I2i ="error"
+      @survey_resposne.I2j ="error"
+      @survey_resposne.I2k1 = "error"
+      @survey_resposne.I2k2 = "error"
+      @survey_resposne.save
+      render('I2.html.erb')
+    end
+    if @survey_resposne.I2k1 == "yes" ||  @survey_resposne.I2k2 == "yes"
+      @survey_resposne.qe2 = "yes"
+      @survey_resposne.save
+    end
+    sum = 0
+    if @survey_resposne.I2a == "yes"
+      sum = sum + 1
+    end
+    if @survey_resposne.I2b == "yes"
+      sum = sum + 1
+    end
+    if @survey_resposne.I2c == "yes"
+      sum = sum + 1
+    end
+    if @survey_resposne.I2d == "yes"
+      sum = sum + 1
+    end
+    if @survey_resposne.I2e == "yes"
+      sum = sum + 1
+    end
+    if @survey_resposne.I2f == "yes"
+      sum = sum + 1
+    end
+    if @survey_resposne.I2g == "yes"
+      sum = sum + 1
+    end
+    if @survey_resposne.I2h == "yes"
+      sum = sum + 1
+    end
+    if @survey_resposne.I2j == "yes"
+      sum = sum + 1
+    end
+    if sum >= 2 && @survey_resposne.qe2 = "yes"
+      render('ineligible.html.erb')
+    end
+  end
 
 
   def ineligible

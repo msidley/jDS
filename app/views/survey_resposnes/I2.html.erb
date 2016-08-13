@@ -1,0 +1,117 @@
+<% if @survey_resposne.I2a == "error" %>
+<div class="alert alert-dismissable alert-danger">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  Please answer the question
+</div>
+<% end %>
+<h3>In the past 12 months:
+</h3>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/J1" method="get">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+      <h4>During the times when you drank alcohol, did you end up drinking more than you planned when you started? </h4>
+      <!-- Label and input for I2 -->
+      <div class="radio">
+        <label><input type="radio" id="I2a" name="I2a" value = "no">No</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" id="I2a" name="I2a" value = "yes" >Yes</label>
+      </div>
+      <h4>Did you repeatedly want to reduce or control your alcohol use? Or did you try to cut down or control your alcohol use, but failed? </h4>
+      <div class="radio">
+        <label><input type="radio" id="I2b" name="I2b" value = "no">No</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" id="I2b" name="I2b" value = "yes" >Yes</label>
+      </div>
+      <h4>On the days that you drank, did you spend substantial time obtaining alcohol, drinking, or recovering from the effects of alcohol?  </h4>
+      <div class="radio">
+        <label><input type="radio" id="I2c" name="I2c" value = "no">No</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" id="I2c" name="I2c" value = "yes" >Yes</label>
+      </div>
+      <h4>Did you crave or have a strong desire or urge to use alcohol? </h4>
+      <div class="radio">
+        <label><input type="radio" id="I2d" name="I2d" value = "no">No</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" id="I2d" name="I2d" value = "yes" >Yes</label>
+      </div>
+      <h4>Did you spend less time meeting your responsibilities at work, at school, or at home, because of your repeated drinking? </h4>
+      <div class="radio">
+        <label><input type="radio" id="I2e" name="I2e" value = "no">No</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" id="I2e" name="I2e" value = "yes" >Yes</label>
+      </div>
+      <h4>If your drinking caused problems with your family or other people, did you still keep on drinking? </h4>
+      <div class="radio">
+        <label><input type="radio" id="I2f" name="I2f" value = "no">No</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" id="I2f" name="I2f" value = "yes" >Yes</label>
+      </div>
+      <h4>Were you intoxicated more than once in any situation where you or others were physically at risk, for example, driving a car, riding a motorbike, using machinery, boating, etc.? </h4>
+      <div class="radio">
+        <label><input type="radio" id="I2g" name="I2g" value = "no">No</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" id="I2g" name="I2g" value = "yes" >Yes</label>
+      </div>
+      <h4>Did you continue to use alcohol, even though it was clear that the alcohol had caused or worsened psychological or physical problems? </h4>
+      <div class="radio">
+        <label><input type="radio" id="I2h" name="I2h" value = "no">No</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" id="I2h" name="I2h" value = "yes" >Yes</label>
+      </div>
+      <h4>Did you reduce or give up important work, social or recreational activities because of your drinking? </h4>
+      <div class="radio">
+        <label><input type="radio" id="I2i" name="I2i" value = "no">No</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" id="I2i" name="I2i" value = "yes" >Yes</label>
+      </div>
+      <h4>Did you need to drink a lot more in order to get the same effect that you got when you first started drinking or did you get much less effect with continued use of the same amount? </h4>
+      <div class="radio">
+        <label><input type="radio" id="I2j" name="I2j" value = "no">No</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" id="I2j" name="I2j" value = "yes" >Yes</label>
+      </div>
+      <h4>When you cut down on heavy or prolonged drinking, did you have 2 or more of the following:
+      <li>increased sweating or increased heart rate</li>
+      <li>hand tremor or “the shakes”</li>
+      <li>trouble sleeping</li>
+      <li>nausea or vomiting</li>
+      <li>hearing or seeing things other people could not see or hear or having sensations in your skin for no apparent reason</li>
+      <li>agitation</li>
+      <li>anxiety</li>
+      <li>seizures </li>
+      </h4>
+      <div class="radio">
+        <label><input type="radio" id="I2k1" name="I2k1" value = "no">No</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" id="I2k1" name="I2k1" value = "yes" >Yes</label>
+      </div>
+      <h4>Did you drink alcohol to reduce or avoid withdrawal symptoms or to avoid being hung-over? </h4>
+      <div class="radio">
+        <label><input type="radio" id="I2k2" name="I2k2" value = "no">No</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" id="I2k2" name="I2k2" value = "yes" >Yes</label>
+      </div>
+
+      <input type="hidden" name="survey_id" value="<%=@survey_resposne.id %>">
+
+      <button class="btn btn-success">
+        Next Question
+      </button>
+    </form>
+  </div>
+</div>

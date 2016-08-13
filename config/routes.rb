@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   get "/C6", :controller => "survey_resposnes", :action => "C6"
   get "/C7", :controller => "survey_resposnes", :action => "C7"
   get "/I1", :controller => "survey_resposnes", :action => "I1"
+  get "/I2", :controller => "survey_resposnes", :action => "I2"
+  get "/J1", :controller => "survey_resposnes", :action => "J1"
 
   post "/create_survey_resposne", :controller => "survey_resposnes", :action => "create"
   get "/ineligible", :controller => "survey_resposnes", :action => "ineligible"
