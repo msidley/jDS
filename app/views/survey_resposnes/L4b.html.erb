@@ -1,0 +1,34 @@
+<% if @survey_resposne.L4b == "error" %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      Please answer the question
+    </div>
+<% end %>
+
+<div class="page-header">
+  <h4>Has your body weight or shape greatly influenced how you felt about yourself?</h4>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/L4c" method="get">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for L4b -->
+          <div class="radio">
+            <label><input type="radio" id="L4b" name="L4b" value = "no">No</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" id="L4b" name="L4b" value = "yes" >Yes</label>
+          </div>
+
+
+      <input type="hidden" name="survey_id" value="<%=@survey_resposne.id %>">
+
+      <button class="btn btn-success">
+        Next Question
+      </button>
+    </form>
+  </div>
+</div>

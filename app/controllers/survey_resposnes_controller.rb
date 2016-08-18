@@ -153,6 +153,10 @@ class SurveyResposnesController < ApplicationController
   end
   def A1a
     @survey_resposne = SurveyResposne.find(params[:survey_id])
+    if params[:q12_1] == "nil" || params[:q12_2] == "nil" || params[:q12_3] == "nil" || params[:q12_4] == "nil" || params[:q12_5] == "nil" || params[:q12_6] == "nil" || params[:q12_7] == "nil" || params[:q12_8] == "nil" || params[:q12_9] == "nil" || params[:q12_10] == "nil" || params[:q12_11] == "nil" || params[:q12_12] == "nil" || params[:q12_13] == "nil" || params[:q12_14] == "nil" || params[:q12_15] == "nil" || params[:q12_16] == "nil" || params[:q12_17] == "nil" || params[:q12_18] == "nil" || params[:q12_19] == "nil" || params[:q12_20] == "nil" || params[:q12_21] == "nil"
+      @survey_resposne.q12 = "error"
+      render('q12.html.erb')
+    end
     score = Integer(params[:q12_1])+Integer(params[:q12_2])+Integer(params[:q12_3])+Integer(params[:q12_4])+Integer(params[:q12_5])+Integer(params[:q12_6])+Integer(params[:q12_7])+Integer(params[:q12_8])+Integer(params[:q12_9])+Integer(params[:q12_10])+Integer(params[:q12_10])+Integer(params[:q12_11])+Integer(params[:q12_12])+Integer(params[:q12_13])+Integer(params[:q12_14])+Integer(params[:q12_15])+Integer(params[:q12_16])+Integer(params[:q12_17])+Integer(params[:q12_18])+Integer(params[:q12_19])+Integer(params[:q12_20])+Integer(params[:q12_21])
     puts score
     @survey_resposne.q12 = score
@@ -562,9 +566,152 @@ end
     render('ineligible.html.erb')
     end
   end
-
-
-
+  def L1b
+    @survey_resposne = SurveyResposne.find(params[:survey_id])
+    @survey_resposne.L1a = params[:ft]
+    @survey_resposne.qe4 = params[:ins]
+    @survey_resposne.save
+    if @survey_resposne.L1a == nil or @survey_resposne.L1a == "error" or @survey_resposne.qe4 == nil or @survey_resposne.qe4 == "error"
+      @survey_resposne.L1a = "error"
+      @survey_resposne.save
+      render('L1a.html.erb')
+    end
+  end
+  def L2
+    @survey_resposne = SurveyResposne.find(params[:survey_id])
+    @survey_resposne.L1b = params[:lbs]
+    @survey_resposne.save
+    if @survey_resposne.L1b == nil or @survey_resposne.L1b == "error" or @survey_resposne.qe4 == nil or @survey_resposne.qe4 == "error"
+      @survey_resposne.L1b = "error"
+      @survey_resposne.save
+      render('L1b.html.erb')
+    end
+    ft = @survey_resposne.L1a
+    ins = @survey_resposne.qe4
+    lbs = @survey_resposne.L1b
+    if Integer(ft)==4 && Integer(ins)==9 && Integer(lbs) > 79
+      render('M1.html.erb')
+    end
+    if Integer(ft)==4 && Integer(ins)==10 && Integer(lbs) > 82
+      render('M1.html.erb')
+    end
+    if Integer(ft)==4 && Integer(ins)==11 && Integer(lbs) > 84
+      render('M1.html.erb')
+    end
+    if Integer(ft)==5 && Integer(ins)==0 && Integer(lbs) > 87
+      render('M1.html.erb')
+    end
+    if Integer(ft)==5 && Integer(ins)==1 && Integer(lbs) > 90
+      render('M1.html.erb')
+    end
+    if Integer(ft)==5 && Integer(ins)==2 && Integer(lbs) > 93
+      render('M1.html.erb')
+    end
+    if Integer(ft)==5 && Integer(ins)==3 && Integer(lbs) > 96
+      render('M1.html.erb')
+    end
+    if Integer(ft)==5 && Integer(ins)==4 && Integer(lbs) > 99
+      render('M1.html.erb')
+    end
+    if Integer(ft)==5 && Integer(ins)==5 && Integer(lbs) > 102
+      render('M1.html.erb')
+    end
+    if Integer(ft)==5 && Integer(ins)==6 && Integer(lbs) > 106
+      render('M1.html.erb')
+    end
+    if Integer(ft)==5 && Integer(ins)==7 && Integer(lbs) > 109
+      render('M1.html.erb')
+    end
+    if Integer(ft)==5 && Integer(ins)==8 && Integer(lbs) > 112
+      render('M1.html.erb')
+    end
+    if Integer(ft)==5 && Integer(ins)==9 && Integer(lbs) > 115
+      render('M1.html.erb')
+    end
+    if Integer(ft)==5 && Integer(ins)==10 && Integer(lbs) > 119
+      render('M1.html.erb')
+    end
+    if Integer(ft)==5 && Integer(ins)==11 && Integer(lbs) > 122
+      render('M1.html.erb')
+    end
+    if Integer(ft)==6 && Integer(ins)==0 && Integer(lbs) > 125
+      render('M1.html.erb')
+    end
+    if Integer(ft)==6 && Integer(ins)==1 && Integer(lbs) > 129
+      render('M1.html.erb')
+    end
+    if Integer(ft)==6 && Integer(ins)==2 && Integer(lbs) > 133
+      render('M1.html.erb')
+    end
+    if Integer(ft)==6 && Integer(ins)==3 && Integer(lbs) > 136
+      render('M1.html.erb')
+    end
+  end
+  def L3
+    @survey_resposne = SurveyResposne.find(params[:survey_id])
+    @survey_resposne.L2 = params[:L2]
+    @survey_resposne.save
+    if @survey_resposne.L2 == nil or @survey_resposne.L2 == "error"
+      @survey_resposne.L2 = "error"
+      @survey_resposne.save
+      render('L2.html.erb')
+    end
+    if @survey_resposne.L2 == "no"
+      render('M1.html.erb')
+    end
+  end
+  def L4a
+    @survey_resposne = SurveyResposne.find(params[:survey_id])
+    @survey_resposne.L3 = params[:L3]
+    @survey_resposne.save
+    if @survey_resposne.L3 == nil or @survey_resposne.L3 == "error"
+      @survey_resposne.L3 = "error"
+      @survey_resposne.save
+      render('L3.html.erb')
+    end
+    if @survey_resposne.L3 == "no"
+      render('M1.html.erb')
+    end
+  end
+  def L4b
+    @survey_resposne = SurveyResposne.find(params[:survey_id])
+    @survey_resposne.L4a = params[:L4a]
+    @survey_resposne.save
+    if @survey_resposne.L4a == nil or @survey_resposne.L4a == "error"
+      @survey_resposne.L4a = "error"
+      @survey_resposne.save
+      render('L4a.html.erb')
+    end
+    if @survey_resposne.L4a == "yes"
+      render('ineligible.html.erb')
+    end
+  end
+  def L4c
+    @survey_resposne = SurveyResposne.find(params[:survey_id])
+    @survey_resposne.L4b = params[:L4b]
+    @survey_resposne.save
+    if @survey_resposne.L4b == nil or @survey_resposne.L4b == "error"
+      @survey_resposne.L4b = "error"
+      @survey_resposne.save
+      render('L4b.html.erb')
+    end
+    if @survey_resposne.L4b == "yes"
+      render('ineligible.html.erb')
+    end
+  end
+  def M1
+    @survey_resposne = SurveyResposne.find(params[:survey_id])
+    @survey_resposne.L4c = params[:L4c]
+    @survey_resposne.save
+    if @survey_resposne.L4c == nil or @survey_resposne.L4c == "error"
+      @survey_resposne.L4c = "error"
+      @survey_resposne.save
+      render('L4c.html.erb')
+    end
+    if @survey_resposne.L4c == "yes"
+      render('ineligible.html.erb')
+    end
+  end
 
   def ineligible
   end
@@ -629,7 +776,7 @@ end
     @survey_resposne.K2a = params[:K2a]
     @survey_resposne.K3a = params[:K3a]
     @survey_resposne.K4a = params[:K4a]
-    @survey_resposne.K5a = params[:K5a]
+    @survey_resposne.L2 = params[:K5a]
     @survey_resposne.K6a = params[:K6a]
     @survey_resposne.K7a = params[:K7a]
     @survey_resposne.L1a = params[:L1a]
