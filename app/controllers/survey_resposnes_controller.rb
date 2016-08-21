@@ -8,6 +8,11 @@ class SurveyResposnesController < ApplicationController
   end
 
   def q1
+    @passcode = params[:passcode]
+    if @passcode != "Jean"
+      @passcode = "error"
+      render('home/start.html.erb')
+    end
     @survey_resposne = SurveyResposne.new
     @survey_resposne.save
   end

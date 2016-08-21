@@ -1,8 +1,23 @@
+
 <div class="page-header">
-  <h3>
-USC Anxiety Study - Screening Survey
-  </h3>
-  <h1>
-    <a href="/q1" class="btn btn-lg btn-success">Begin Survey</a>
-  </h1>
+<% if @passcode == "error" %>
+<div class="alert alert-dismissable alert-danger">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <br></br>
+  <h4>That password is not correct</h4>
+</div class = "body">
+<% end %>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/q1" method="get">
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+      <!-- Label and input for C5 -->
+    <label>Please Enter Password <input type="text" id="passcode" name="passcode"  data-bind="value:replyNumber" ></label>
+
+      <h1><button class="btn btn-success">
+        Begin Survey
+      </button></h1>
+    </form>
+  </div>
 </div>
