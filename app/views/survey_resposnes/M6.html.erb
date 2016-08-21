@@ -1,0 +1,41 @@
+<!-- Validation failure messages -->
+<% if @survey_resposne.errors.any? %>
+  <% @survey_resposne.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h3>
+  Unfortunately, you do not meet our target audience. Thank you for your time!
+</h3>
+<br></br>
+<h4>
+In case you are interested in referrals, here are some resources in the Los Angeles area:
+</h4>
+<dl>
+<dt>Engemann Student Health Student Counseling Services [USC students only]</dt>
+<dt>(213) 740-7711</dt>
+<dt>1031 West 34th Street</dt>
+<dt>Los Angeles, CA 90089</dt>
+</dl>
+<dl>
+<dt>USC Psychology Services Center [open to the community]</dt>
+<dt>(213) 740-1600</dt>
+<dt>3620 McClintock Ave., SGM 1030</dt>
+<dt>Los Angeles, CA 90089</dt>
+<dt>https://dornsife.usc.edu/usc-psc</dt>
+</dl>
+
+<p>
+On USC campus, for life-threatening emergency, call the USC Department of Public Safety (DPS) at 213-740-4321. As a USC student, you can also call the Engemann Student Health Center’s Student Counseling Services at 213-740-7711.
+
+Off campus, call 9-1-1. You can also seek help at your local emergency room and/or from your general practitioner.
+
+Anyone can also call the Didi Hirsch Suicide Prevention Crisis Hotline at 877-727-4747 (available 24 hours a day, 7 days a week, toll-free in L.A.).
+
+For additional referrals, call the Department of Mental Health line at 2-1-1.
+
+</p>

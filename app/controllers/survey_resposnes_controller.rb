@@ -712,6 +712,81 @@ end
       render('ineligible.html.erb')
     end
   end
+  def M2
+    @survey_resposne = SurveyResposne.find(params[:survey_id])
+    @survey_resposne.M1 = params[:M1]
+    @survey_resposne.save
+    if @survey_resposne.M1 == nil or @survey_resposne.M1 == "error"
+      @survey_resposne.M1 = "error"
+      @survey_resposne.save
+      render('M1.html.erb')
+    end
+    if @survey_resposne.M1 == "no"
+      render('M3.html.erb')
+    end
+  end
+  def M3
+    @survey_resposne = SurveyResposne.find(params[:survey_id])
+    @survey_resposne.M2 = params[:M2]
+    @survey_resposne.save
+    if @survey_resposne.M2 == nil or @survey_resposne.M2 == "error"
+      @survey_resposne.M2 = "error"
+      @survey_resposne.save
+      render('M2.html.erb')
+    end
+  end
+  def M3a
+    @survey_resposne = SurveyResposne.find(params[:survey_id])
+    @survey_resposne.M3 = params[:M3]
+    @survey_resposne.save
+    if @survey_resposne.M3 == nil or @survey_resposne.M3 == "error"
+      @survey_resposne.M3 = "error"
+      @survey_resposne.save
+      render('M3.html.erb')
+    end
+    if @survey_resposne.M3 == "no"
+      render('eligible.html.erb')
+    end
+  end
+  def M4
+    @survey_resposne = SurveyResposne.find(params[:survey_id])
+    @survey_resposne.M3a = params[:M3a]
+    @survey_resposne.save
+    if @survey_resposne.M3a == nil or @survey_resposne.M3a == "error"
+      @survey_resposne.M3a = "error"
+      @survey_resposne.save
+      render('M3a.html.erb')
+    end
+    if @survey_resposne.M3a == "no"
+      render('eligible.html.erb')
+    end
+  end
+  def M5
+    @survey_resposne = SurveyResposne.find(params[:survey_id])
+    @survey_resposne.M4 = params[:M4]
+    @survey_resposne.save
+    if @survey_resposne.M4 == nil or @survey_resposne.M4 == "error"
+      @survey_resposne.M4 = "error"
+      @survey_resposne.save
+      render('M4.html.erb')
+    end
+    if @survey_resposne.M4 == "no"
+      render('eligible.html.erb')
+    end
+  end
+  def M6
+    @survey_resposne = SurveyResposne.find(params[:survey_id])
+    @survey_resposne.M5 = params[:M5]
+    @survey_resposne.save
+    if @survey_resposne.M5 == nil or @survey_resposne.M5 == "error"
+      @survey_resposne.M5 = "error"
+      @survey_resposne.save
+      render('M5.html.erb')
+    end
+    if @survey_resposne.M5 == "no"
+      render('eligible.html.erb')
+    end
+  end
 
   def ineligible
   end

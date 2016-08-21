@@ -1,4 +1,4 @@
-<% if @survey_resposne.M1 == "error" %>
+<% if @survey_resposne.M4 == "error" %>
     <div class="alert alert-dismissable alert-danger">
       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
       Please answer the question
@@ -6,21 +6,21 @@
 <% end %>
 
 <div class="page-header">
-  <h4>In the past three months, did you have eating binges or times when you ate a very large amount of food within a 2-hour period? </h4>
+  <h4>In the last 3 months, did you have eating binges as often as once a week?</h4>
 </div>
 
 <div class="row">
   <div class="col-md-12">
-    <form action="/M2" method="get">
+    <form action="/M5" method="get">
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-      <!-- Label and input for M1 -->
+      <!-- Label and input for M4 -->
           <div class="radio">
-            <label><input type="radio" id="M1" name="M1" value = "no">No</label>
+            <label><input type="radio" id="M4" name="M4" value = "no">No</label>
           </div>
           <div class="radio">
-            <label><input type="radio" id="M1" name="M1" value = "yes" >Yes</label>
+            <label><input type="radio" id="M4" name="M4" value = "yes" >Yes</label>
           </div>
 
 
