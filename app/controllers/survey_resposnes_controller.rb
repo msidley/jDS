@@ -109,12 +109,12 @@ class SurveyResposnesController < ApplicationController
   end
   def q9
     @survey_resposne = SurveyResposne.find(params[:survey_id])
-    @survey_resposne.q8 = params[:q8]
+    @survey_resposne.q7 = params[:q7]
     @survey_resposne.save
-    if @survey_resposne.q8 == nil or @survey_resposne.q8 == "error"
-      @survey_resposne.q8 = "error"
+    if @survey_resposne.q7 == nil or @survey_resposne.q7 == "error"
+      @survey_resposne.q7 = "error"
       @survey_resposne.save
-      render('q8.html.erb')
+      render('q7.html.erb')
     end
   end
   def q10
