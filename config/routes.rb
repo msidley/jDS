@@ -40,7 +40,7 @@ Rails.application.routes.draw do
   get "/L2", :controller => "survey_resposnes", :action => "L2"
   get "/L3", :controller => "survey_resposnes", :action => "L3"
   get "/L4a", :controller => "survey_resposnes", :action => "L4a"
-  get "/L4b", :controller => "survey_resposnes", :action => "L4a"
+  get "/L4b", :controller => "survey_resposnes", :action => "L4b"
   get "/L4c", :controller => "survey_resposnes", :action => "L4c"
   get "/M1", :controller => "survey_resposnes", :action => "M1"
   get "/M2", :controller => "survey_resposnes", :action => "M2"
