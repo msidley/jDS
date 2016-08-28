@@ -406,10 +406,10 @@ class SurveyResposnesController < ApplicationController
       render('J1.html.erb')
     end
     if @survey_resposne.J1aLtext == "no"
-      render('K1a.html.erb')
+      render('unusual.html.erb')
     end
   end
-def K1a
+def unusual
   @survey_resposne = SurveyResposne.find(params[:survey_id])
   @survey_resposne.J2a = params[:J2a]
   @survey_resposne.J2b = params[:J2b]
@@ -476,6 +476,9 @@ def K1a
     render('ineligible.html.erb')
   end
 end
+  def K1a
+    @survey_resposne = SurveyResposne.find(params[:survey_id])
+  end
   def K2a
     @survey_resposne = SurveyResposne.find(params[:survey_id])
     @survey_resposne.K1a = params[:K1a]

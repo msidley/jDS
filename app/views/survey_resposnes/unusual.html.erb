@@ -1,0 +1,16 @@
+<div class="page-header">
+  <h4>Now you are going to be asked about unusual experiences that some people have.</h4>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/K1a" method="get">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+      <input type="hidden" name="survey_id" value="<%=@survey_resposne.id %>">
+      <button class="btn btn-success">
+        Next Question
+      </button>
+    </form>
+  </div>
+</div>

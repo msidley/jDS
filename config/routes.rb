@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   get "/I2", :controller => "survey_resposnes", :action => "I2"
   get "/J1", :controller => "survey_resposnes", :action => "J1"
   get "/J2", :controller => "survey_resposnes", :action => "J2"
+  get "/unusual", :controller => "survey_resposnes", :action => "unusual"
   get "/K1a", :controller => "survey_resposnes", :action => "K1a"
   get "/K2a", :controller => "survey_resposnes", :action => "K2a"
   get "/K3a", :controller => "survey_resposnes", :action => "K3a"
