@@ -9,7 +9,7 @@ class SurveyResposnesController < ApplicationController
 
   def q1
     @passcode = params[:passcode]
-    if @passcode != "Jean"
+    if @passcode != "uscsurvey"
       @passcode = "error"
       render('home/start.html.erb')
     end
